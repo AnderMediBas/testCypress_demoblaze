@@ -8,17 +8,12 @@ class loginModel {
   btnModalLogin() {
     return cy.get("#login2");
   }
-  content_modal(modal) {
+  content_modal() {
     return cy.get("#logInModal");
   }
   btnLogin() {
     return cy.get(
       "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
-    );
-  }
-  btnCloseModalLogin() {
-    return cy.get(
-      "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary"
     );
   }
 }

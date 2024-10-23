@@ -14,7 +14,7 @@ class RegisterModel {
   content_modal_reg() {
     return cy.get("#signInModal");
   }
-  
+
   btnRegistro() {
     return cy.get(
       "#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"

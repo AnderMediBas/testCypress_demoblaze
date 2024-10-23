@@ -3,11 +3,7 @@ class LogonController {
   // GENERAMOS MÉTODOS PARA HACER LAS OPERACIONES DE LAS PRUEBAS
   openModal() {
       loginModelCy.btnModalLogin().click(); //hacemos el llamado de los atributos del Modelo Login
-      loginModelCy.content_modal().should("be.visible");
-  }
-  closeModal() {
-    loginModelCy.btnCloseModalLogin().should("be.visible").click();
-    loginModelCy.content_modal().should("be.visible");
+      loginModelCy.content_modal().should("exist").and("be.visible");
   }
   probandoButtonModal() {
     loginModelCy.btnCloseModalLogin().should("be.visible").click();

@@ -11,11 +11,7 @@ class RegisterController {
     this.checkVisibility(RegisterModelCy.content_modal_reg(),false) ;
     RegisterModelCy.btnModalRegistro().click(); //hacemos el llamado de los atributos del Modelo Login
   }
-  closeModal() {
-    this.checkVisibility(RegisterModelCy.btnModalRegistro);
-    RegisterModelCy.btnModalRegistro().click();
-    this.checkVisibility(RegisterModelCy.content_modal_reg);
-  }
+  
   probandoButtonModal() {
     RegisterModelCy.btnCloseModalLogin().should("be.visible").click();
   }

@@ -1,9 +1,7 @@
-class categoriaModel{
-    IngresarCategoria(categoria){
-        return cy.get('[onclick="byCat(\''+categoria+'\')"]');
-    }
-    
-    
+class categoriaModel {
+  IngresarCategoria(categoria) {
+    return cy.get("[onclick=\"byCat('" + categoria + "')\"]");
+  }
 }
 
-export default new categoriaModel
+export default new categoriaModel();

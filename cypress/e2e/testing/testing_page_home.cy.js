@@ -15,14 +15,15 @@ describe("Testeando Page Home", () => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
   });
   /*********************************************** */
-  //Dando valores con lo que vamos a hacer las pruebas
 
+  //Dando valores con lo que vamos a hacer las pruebas
   const txtUser = "ander_aimarescorpio@hotmail.com";
   const txtpassword = "123456789";
 
   /************************************************ */
   //REGISTRO
   /* ********************************************* */
+
   it("Verificar registro de Usuario", () => {
     RegisterControllerCy.openModal();
     RegisterControllerCy.validarDatos(txtUser, txtpassword);
