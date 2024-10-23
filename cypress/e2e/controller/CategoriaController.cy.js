@@ -1,19 +1,14 @@
 import categoriaModelCy from "../model/categoriaModel.cy";
 
 class CategoriaController {
-  select_caregoria() {
-    
-  }
-  select_notebook() {
-    categoriaModelCy.btn_cat_notebook().click().wait(2000);
-  }
-  select_monitor() {
-    categoriaModelCy.btn_cat_monitor().click().wait(2000);
+  select_caregoria(nom_cat) {
+    const categoria = categoriaModelCy.IngresarCategoria(nom_cat);
+    categoria.click().wait(1000);
+    return categoria;
   }
 
   navegarProduct(nom_cat) {
-
-    categoriaModelCy.IngresarCategoria(nom_cat).click().wait(1000);
+    this.select_caregoria(nom_cat);
 
     cy.get(".card-block a").each(($el, index, $list) => {
       // Capturar el href de cada producto
@@ -27,13 +22,14 @@ class CategoriaController {
 
       // Navegar al producto
       cy.visit(`https://www.demoblaze.com/${productHref}`);
-      cy.wait(1000);  
+      cy.wait(1000);
       // Verificar que la página del producto cargue correctamente
-      cy.get(".name").should("be.visible");
+      cy.get(".name").wait(1000).should("exist").and("be.visible  ");
 
       // Volver a la página de Phones para seguir con el siguiente producto
-      cy.go("back") . wait(1000);
-      categoriaModelCy.IngresarCategoria(nom_cat).click().wait(1000);
+      cy.go("back").wait(1000);
+
+      this.select_caregoria(nom_cat);
     });
   }
 }

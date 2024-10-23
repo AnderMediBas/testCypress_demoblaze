@@ -14,8 +14,8 @@ class LogonController {
   }
   validarLogin(user, pass) {
     loginModelCy.content_modal().should("be.visible");
-    loginModelCy.inputUser().wait(2000).should("be.visible").type(user);
-    loginModelCy.inputPass().wait(2000).should("be.visible").type(pass);
+    loginModelCy.inputUser().wait(1000).should("be.visible").type(user);
+    loginModelCy.inputPass().wait(1000).should("be.visible").type(pass);
     loginModelCy.btnLogin().click();
   }
 }

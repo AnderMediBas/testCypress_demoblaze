@@ -2,22 +2,27 @@ import RegisterModelCy from "../model/RegisterModel.cy";
 
 RegisterModelCy
 class RegisterController {
+  checkVisibility(element,visible=true){
+    element.should(visible ? "be.visible": "not.be.visible");
+  }
+
   // GENERAMOS MÉTODOS PARA HACER LAS OPERACIONES DE LAS PRUEBAS
   openModal() {
-    RegisterModelCy.content_modal_reg().should("not.be.visible");
+    this.checkVisibility(RegisterModelCy.content_modal_reg(),false) ;
     RegisterModelCy.btnModalRegistro().click(); //hacemos el llamado de los atributos del Modelo Login
   }
   closeModal() {
-    RegisterModelCy.btnModalRegistro().should("be.visible").click();
-    RegisterModelCy.content_modal().should("be.visible");
+    this.checkVisibility(RegisterModelCy.btnModalRegistro);
+    RegisterModelCy.btnModalRegistro().click();
+    this.checkVisibility(RegisterModelCy.content_modal_reg);
   }
   probandoButtonModal() {
     RegisterModelCy.btnCloseModalLogin().should("be.visible").click();
   }
   validarDatos(user, pass) {
-    RegisterModelCy.content_modal_reg().should("be.visible");
-    RegisterModelCy.inputUser().wait(2000).should("be.visible").type(user);
-    RegisterModelCy.inputPass().wait(2000).should("be.visible").type(pass);
+    this.checkVisibility(RegisterModelCy.content_modal_reg());
+    RegisterModelCy.inputUser().wait(1000).type(user).should("be.visible");
+    RegisterModelCy.inputPass().wait(1000).type(pass).should("be.visible");
     RegisterModelCy.btnRegistro().click();
   }
 }
