@@ -25,31 +25,26 @@ describe("Testeando Page Home", () => {
   /************************************************ */
   //REGISTRO
   /* ********************************************* */
-  /* it("Verificar registro de Usuario", () => {
+  it("Verificar registro de Usuario", () => {
      
     RegisterControllerCy.openModal();
     RegisterControllerCy.validarDatos(txtUser, txtpassword);
-  });  */
+  }); 
 
   /* *************************************************** */
   //LOGIN
   /* *************************************************** */
 
-  /* it("Debe iniciar sesion Correctamente", () => {
+  it("Debe iniciar sesion Correctamente", () => {
     LoginControllerCy.openModal();
     LoginControllerCy.validarLogin(txtUser, 123456789);
-  }); */ 
+  }); 
 
   /* ***************************************************** */
   //CATEGORIA
   /* ***************************************************** */
 
   it('Debe de navegar por las opciones de categoria categorias', () => {
-   /*  CategoriaControllerCy.select_caregoria('phone');
-    CategoriaControllerCy.navegarProduct();
-    CategoriaControllerCy.select_caregoria('notebook');
-    CategoriaControllerCy.navegarProduct(); */
-    
    
     CategoriaControllerCy.navegarProduct('phone');
     CategoriaControllerCy.navegarProduct('notebook');
