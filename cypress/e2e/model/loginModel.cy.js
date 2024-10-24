@@ -2,19 +2,21 @@ class loginModel {
   inputUser() {
     return cy.get("#loginusername");
   }
+
   inputPass() {
     return cy.get("#loginpassword");
   }
+
   btnModalLogin() {
     return cy.get("#login2");
   }
-  content_modal() {
+
+  contentModal() {
     return cy.get("#logInModal");
   }
+
   btnLogin() {
-    return cy.get(
-      "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
-    );
+    return cy.get("#logInModal .btn-primary");
   }
 }
 

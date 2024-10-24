@@ -5,7 +5,7 @@ import RegisterControllerCy from "../controller/RegisterController.cy.js";
 Cypress.on("uncaught:exception", (err, runnable) => {
   if (err.message.includes("Modal is transitioning")) {
     return false; // Ignora este error en particular
-  }
+  }   
   return true; // Para otros errores, sigue fallando la prueba
 });
 
@@ -17,15 +17,14 @@ describe("Testeando Page Home", () => {
   /*********************************************** */
 
   //Dando valores con lo que vamos a hacer las pruebas
-  const txtUser = "ander_aimarescorpio@hotmail.com";
-  const txtpassword = "123456789";
+  const txtUser = "JuanPerez";
+  const txtpassword = "Perez123";
 
   /************************************************ */
   //REGISTRO
   /* ********************************************* */
 
   it("Verificar registro de Usuario", () => {
-    RegisterControllerCy.openModal();
     RegisterControllerCy.validarDatos(txtUser, txtpassword);
   });
 
@@ -35,7 +34,7 @@ describe("Testeando Page Home", () => {
 
   it("Debe iniciar sesion Correctamente", () => {
     LoginControllerCy.openModal();
-    LoginControllerCy.validarLogin(txtUser, 123456789);
+    LoginControllerCy.validarLogin(txtUser, txtpassword);
   });
 
   /* ***************************************************** */
@@ -43,8 +42,8 @@ describe("Testeando Page Home", () => {
   /* ***************************************************** */
 
   it("Debe de navegar por las opciones de categoria categorias", () => {
-    CategoriaControllerCy.navegarProduct("phone");
-    CategoriaControllerCy.navegarProduct("notebook");
-    CategoriaControllerCy.navegarProduct("monitor");
+    ["phone", "notebook", "monitor"].forEach((categoria) => {
+      CategoriaControllerCy.navegarProduct(categoria);
+    });
   });
 });

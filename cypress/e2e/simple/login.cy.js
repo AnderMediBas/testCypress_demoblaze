@@ -16,11 +16,6 @@ class login {
       "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
     );
   }
-  btnCloseModalLogin() {
-    return cy.get(
-      "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary"
-    );
-  }
 
   //IMPLEMENTANDO METODOS
 
