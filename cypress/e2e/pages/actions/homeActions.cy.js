@@ -1,81 +1,83 @@
 import homePageLocatorsCy from "../locators/homePageLocators.cy";
 
-
 class homeActions {
+  //Metodos para seleccionar las categorias
   selectCategoriaphone() {
-    cy.get(homePageLocatorsCy.locator.categoryPhone).click();
+    homePageLocatorsCy.locator.categoryPhone().click();
     cy.wait(1000);
   }
   selectCategoriaLaptop() {
-    cy.get(homePageLocatorsCy.locator.categoryLaptops).click();
+    homePageLocatorsCy.locator.categoryLaptops().click();
     cy.wait(1000);
   }
   selectCategoriaMonitor() {
-    cy.get(homePageLocatorsCy.locator.categoryMonitor).click();
+    homePageLocatorsCy.locator.categoryMonitor().click();
     cy.wait(1000);
   }
 
+  //Metodo para seleccionar los productos en sus Respectivas categorias
   selectSamsung_Ga_S6() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Samsung galaxy s6").should('be.visible').click();
+    this.selectCategoriaphone(); // llamando el metodo de seleccion de categoria
+    homePageLocatorsCy.locator.samsung_S6().click();
   }
   selectNokia_Lu_1520() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Nokia lumia 1520").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.Nokia_lumia_1520().click();
   }
   selectNexus_6() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Nexus 6").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.Nexus_6().click();
   }
   selectSamsung_Ga_S7() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Samsung galaxy s7").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.samsun_s7().click();
   }
   selectIphone_6() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Iphone 6 32gb").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.Iphone_6_32gb().click();
   }
   selectSony_xpeia_z5() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Sony xperia z5").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.Sony_xperia_z5().click();
   }
   selectHtc_one_m9() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("HTC One M9").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.HTC_One_M9().click();
   }
   selectSony_vaio_i5() {
-      this.selectCategoriaphone();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Sony vaio i5").should('be.visible').click();
+    this.selectCategoriaphone();
+    homePageLocatorsCy.locator.Sony_vaio_i5().click();
   }
   selectSony_vaio_i7() {
-      this.selectCategoriaLaptop();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Sony vaio i7").should('be.visible').click();
+    this.selectCategoriaLaptop();
+    homePageLocatorsCy.locator.Sony_vaio_i7().click();
   }
   selectMacbook_air() {
-      this.selectCategoriaLaptop();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("MacBook air").should('be.visible').click();
+    this.selectCategoriaLaptop();
+    homePageLocatorsCy.locator.MacBook_air().click();
   }
   selectDell_i7() {
-      this.selectCategoriaLaptop();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Dell i7 8gb").should('be.visible').click();
+    this.selectCategoriaLaptop();
+    homePageLocatorsCy.locator.Dell_i7_8gb().click();
   }
   selectDell_inch_2017() {
-      this.selectCategoriaLaptop();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("2017 Dell 15.6 Inch").should('be.visible').click();
+    this.selectCategoriaLaptop();
+    homePageLocatorsCy.locator.Dell_15_6_Inch().click();
   }
   selectMacbook_pro() {
-      this.selectCategoriaLaptop();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("MacBook Pro").should('be.visible').click();
+    this.selectCategoriaLaptop();
+    homePageLocatorsCy.locator.MacBook_Pro().click();
   }
   selectApple_monitor_24() {
-      this.selectCategoriaMonitor();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("Apple monitor 24").should('be.visible').click();
+    this.selectCategoriaMonitor();
+    homePageLocatorsCy.locator.Apple_monitor_24().click();
   }
+
+  //Metodo para seleccionar otro producto si se lo requiera
   selectAsus_full_hd() {
-      this.selectCategoriaMonitor();
-      cy.get(homePageLocatorsCy.locator.productLink).contains("ASUS Full HD").should('be.visible').click();
+    this.selectCategoriaMonitor();
+    homePageLocatorsCy.locator.ASUS_Full_HD().click();
   }
-  
 }
 
 export default new homeActions();

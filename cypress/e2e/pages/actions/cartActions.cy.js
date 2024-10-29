@@ -5,9 +5,9 @@ class cartActions{
     add={
         addCartProduct(productName,functiosSelect){
             functiosSelect;
-            cy.get(cartPageLocatorsCy.locator.productName).contains(productName);
-            cy.get(cartPageLocatorsCy.locator.submitAddCar).click();
-            cy.get(cartPageLocatorsCy.locator.cartLink).click();
+            cartPageLocatorsCy.locator.productName().contains(productName);
+            cartPageLocatorsCy.locator.submitAddCar().click();
+            cartPageLocatorsCy.locator.cartLink().click();
         }
         ,
         Samsung_ga_s6(){
@@ -66,12 +66,12 @@ class cartActions{
         },
         
         addMoreProduct(){
-            cy.get(cartPageLocatorsCy.locator.homeLink).click();
+            cartPageLocatorsCy.locator.homeLink().click();
         },
     }
     delete={
         deleteProduct(){
-            cy.get(cartPageLocatorsCy.locator.cartLink).click();
+            cartPageLocatorsCy.locator.cartLink().click();
         }
     }
 }

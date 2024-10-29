@@ -10,10 +10,10 @@ class loginActions {
   }
 
   loginUser(username, password) {
-    cy.get(loginPageLocatorsCy.locator.btnModalLogin).click();
-    cy.get(loginPageLocatorsCy.locator.loginUsername).type(username);
-    cy.get(loginPageLocatorsCy.locator.loginPassword).type(password);
-    cy.get(loginPageLocatorsCy.locator.submitLoginButton).click();
+    loginPageLocatorsCy.locator.btnModalLogin().click();
+    loginPageLocatorsCy.locator.loginUsername().type(username);
+    loginPageLocatorsCy.locator.loginPassword().type(password);
+    loginPageLocatorsCy.locator.submitLoginButton().click();
 
     // Verifica que el usuario esté logueado correctamente
     /* cy.get(locators.auth.userWelcomeMessage).should('contain', `Welcome ${username}`) */

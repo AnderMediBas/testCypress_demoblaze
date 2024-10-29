@@ -1,10 +1,13 @@
 class registerPageLocators{
     locator={
-        btnModalSign_in:'#signin2',
-        signUsername:'#sign-username',
-        signPassword:'#sign-password',
-        submitSignButton:'#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary',
-        contentModalSign_in:'#signInModal'
+        btnModalSign_in:()=>cy.get('#signin2'),
+        signUsername:()=>cy.get('#sign-username'),
+        signPassword:()=>cy.get('#sign-password'),
+        submitSignButton:()=>cy.get('#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary'),
+        contentModalSign_in:()=>cy.get('#signInModal'),
+
+        
+
     }
 }
 

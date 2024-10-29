@@ -1,40 +1,48 @@
 class login {
-  inputUser() {
+  //inicializamos "userData" con un array vacio
+    userData = [];
+  
+  //METODO PARA OBTENER LOS CAMPOS 
+  loginUsername() {
     return cy.get("#loginusername");
   }
-  inputPass() {
+  loginPassword() {
     return cy.get("#loginpassword");
   }
   btnModalLogin() {
     return cy.get("#login2");
   }
-  content_modal(modal) {
+  contentModalLogin() {
     return cy.get("#logInModal");
   }
-  btnLogin() {
+  submitLoginButton() {
     return cy.get(
       "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
     );
   }
 
-  //IMPLEMENTANDO METODOS
+  //METODO PARA CARGAR LOS DATOS DE FIXTURE
+  loadUserData() {
+    cy.fixture("example").then((data) => {
+      this.userData = data; // Almacena los datos del fixture
+    });
+  }
 
-  openModal() {
-    this.btnModalLogin().click(); //hacemos el llamado de los atributos del Modelo Login
-    this.content_modal().should("be.visible");
+  //Método para realizar el login con un nombre de usuario y contraseña específicos
+  loginUser(username, password) {
+    this.btnModalLogin().should("be.visible").click();
+    this.loginUsername().should("be.visible").type(username);
+    this.loginPassword().type(password);
+    this.submitLoginButton().click();
   }
-  closeModal() {
-    this.btnCloseModalLogin().should("be.visible").click();
-    this.content_modal().should("be.visible");
-  }
-  probandoButtonModal() {
-    this.btnCloseModalLogin().should("be.visible").click();
-  }
-  validarLogin(user, pass) {
-    this.content_modal().should("be.visible");
-    this.inputUser().wait(1000).should("be.visible").type(user);
-    this.inputPass().wait(1000).should("be.visible").type(pass);
-    this.btnLogin().click();
+
+  //Método para iniciar sesión con múltiples usuarios
+  loginMultipleUsers() {
+    //Itera sobre cada usuario almacenado en "userData"
+    this.userData.forEach((user) => {
+      this.loginUser(user.username, user.userpassword); //iNICIA SESION CON CADA USUARIO
+      cy.reload(); // Recargar para el siguiente intento de login
+    });
   }
 }
 

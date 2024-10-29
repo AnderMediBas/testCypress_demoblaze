@@ -1,11 +1,11 @@
 class loginPageLocators{
 
     locator={
-        btnModalLogin:'#login2',
-        loginUsername:'#loginusername',
-        loginPassword   :'#loginpassword',
-        submitLoginButton:'#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary',
-        contentModalLogin:'#logInModal'
+        btnModalLogin:() =>     cy.get('#login2'),
+        loginUsername:() =>     cy.get('#loginusername'),
+        loginPassword:() =>     cy.get('#loginpassword'),
+        submitLoginButton:() => cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary'),
+        contentModalLogin:() => cy.get('#logInModal')
     }
     
 }

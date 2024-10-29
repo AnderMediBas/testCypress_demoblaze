@@ -10,17 +10,17 @@ class checkOutActions{
         });
     }
     openCheckOut(){
-        cy.get(checkOutLocatorsCy.locators.openCheckOut).contains('Place Order').click();
+        checkOutLocatorsCy.locators.openCheckOut().contains('Place Order').click();
     }
     createCheckOut(name,country,city,card,month,year){
         this.openCheckOut();
-        cy.get(checkOutLocatorsCy.locators.inputName).type(name);
-        cy.get(checkOutLocatorsCy.locators.inputCountry).type(country);
-        cy.get(checkOutLocatorsCy.locators.inputCity).type(city);
-        cy.get(checkOutLocatorsCy.locators.inputCard).type(card);
-        cy.get(checkOutLocatorsCy.locators.inputMonth).type(month);
-        cy.get(checkOutLocatorsCy.locators.inputYear).type(year);
-        cy.get(checkOutLocatorsCy.locators.btnRegistrarCheckOut).click();
+        checkOutLocatorsCy.locators.inputName().type(name);
+        checkOutLocatorsCy.locators.inputCountry().type(country);
+        checkOutLocatorsCy.locators.inputCity().type(city);
+        checkOutLocatorsCy.locators.inputCard().type(card);
+        checkOutLocatorsCy.locators.inputMonth().type(month);
+        checkOutLocatorsCy.locators.inputYear().type(year);
+        checkOutLocatorsCy.locators.btnRegistrarCheckOut().click();
     }
     loadMultipleCheckout(){
         this.checkoutData.forEach(element => {

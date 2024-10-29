@@ -14,15 +14,15 @@ class registerActions{
     }
 
     signUser(username,password){
-        cy.get(registerPageLocatorsCy.locator.btnModalSign_in).click();
-        cy.get(registerPageLocatorsCy.locator.signUsername).type(username);
-        cy.get(registerPageLocatorsCy.locator.signPassword).type(password);
-        cy.get(registerPageLocatorsCy.locator.submitSignButton).click();
+        registerPageLocatorsCy.locator.btnModalSign_in().click();
+        registerPageLocatorsCy.locator.signUsername().type(username);
+        registerPageLocatorsCy.locator.signPassword().type(password);
+        registerPageLocatorsCy.locator.submitSignButton().click();
     }
     siginMultipleUsers() {
         this.userData.forEach((user) => {
             this.signUser(user.username, user.userpassword);
-            cy.reload(); // Recargar para el siguiente intento de login
+            cy.reload(); // Recargar para hacer el siguiente registro 
         });
     }
 

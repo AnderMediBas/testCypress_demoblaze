@@ -12,9 +12,4 @@ describe("TESTER PAGE HOME", () => {
     registerActionsCy.siginMultipleUsers();
   });
 
- /*  it('Debe de Ingresar a los productos de la Categoria Phone', () => {
-    categorySteepCy.selectCategoriaphone();
-    categorySteepCy.selectProducto1();
-    cy.go(-1);
-  }); */
 });
